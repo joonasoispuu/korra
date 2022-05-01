@@ -12,35 +12,38 @@ namespace OdeToFood.Data
 		{
 			if (!context.Restaurants.Any())
 			{
-				context.Restaurants.Add(
-					new Restaurant
-					{
-						Name = "Cinnamon Club",
-						City = "London",
-						Country = "UK",
-						Reviews = new List<RestaurantReview>()
-						{
+				for (int i = 1; i <= 1000; i++)
+				{
+					context.Restaurants.Add(
+							new Restaurant
+							{
+								Name = $"Cinnamon Club {i}",
+								City = "London",
+								Country = "UK",
+								Reviews = new List<RestaurantReview>()
+								{
 							new RestaurantReview()
 							{
 								Rating = 10,
-								Body = "Superlahe"
+								Body = "Suurepärane!"
 							}
-						}
-					});
-				context.Restaurants.Add(
-					new Restaurant
-					{
-						Name = "Mens Club",
-						City = "Berlin",
-						Country = "Germany",
-					});
-				context.Restaurants.Add(
-					new Restaurant
-					{
-						Name = "Cool Food Place",
-						City = "Rome",
-						Country = "Italy",
-					});
+								}
+							});
+					context.Restaurants.Add(
+						new Restaurant
+						{
+							Name = "Mens Club",
+							City = "Berlin",
+							Country = "Germany",
+						});
+					context.Restaurants.Add(
+						new Restaurant
+						{
+							Name = "Cool Food Place",
+							City = "Rome",
+							Country = "Italy",
+						});
+				}
 				context.SaveChanges();
 			}
 		}
