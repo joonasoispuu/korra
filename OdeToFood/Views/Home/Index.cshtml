@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RestaurantListViewModel>
+﻿@model IPagedList<RestaurantListViewModel>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -11,15 +11,6 @@
            data-otf-autocomplete="@Url.Action("Autocomplete")" />
     <input type="submit" value="Search By Name" />
 </form>
-@*@using (Html.AjaxBeginForm(new AjaxOptions
-    {
-        HttpMethod = "get",
-        InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "restaurantList"
-    }))
-    {
-        <input type="search" name="searchTerm" />
-        <input type="submit" value="Search By Name" />
-    }*@
+
 
 <partial name="_Restaurants" model="Model" />
