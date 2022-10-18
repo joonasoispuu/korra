@@ -13,7 +13,7 @@ namespace OdeToFood.Data
 		{
 			if (!context.Restaurants.Any())
 			{
-				for (int i = 1; i <= 1000; i++)
+				for (int i = 1; i <= 100; i++)
 				{
 					context.Restaurants.Add(
 							new Restaurant
@@ -33,18 +33,26 @@ namespace OdeToFood.Data
 					context.Restaurants.Add(
 						new Restaurant
 						{
-							Name = "Mens Club",
+							Name = $"Mens Club {i}",
 							City = "Berlin",
 							Country = "Germany",
 						});
 					context.Restaurants.Add(
 						new Restaurant
 						{
-							Name = "Cool Food Place",
+							Name = $"Cool Food Place {i}",
 							City = "Rome",
 							Country = "Italy",
 						});
-				}
+
+					context.Restaurants.Add(
+						new Restaurant
+						{
+							Name = $"Cooler Food Place {i}",
+							City = "Naples",
+							Country = "Italy",
+						});
+                }
 				context.SaveChanges();
 			}
 		}
